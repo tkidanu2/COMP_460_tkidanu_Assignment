@@ -3,19 +3,11 @@
 ## Problem Understanding
 Given a set S of n items with values S[1..n] and weights W[1..n], we need to find the weighted median in O(n) time.
 
-### Definitions:
-- S_x = set of elements whose value is less than value of x
-- S^x = set of elements whose value is more than value of x
-- w(R) = sum of weights of elements in subset R
-- Weighted median x satisfies: w(S_x) ≤ w(S)/2 and w(S^x) ≤ w(S)/2
 
 ## Thought Process
 
 ### Initial Analysis
-The key insight is that this is similar to finding a regular median, but instead of counting elements, we're counting weights. The weighted median is the element that "balances" the total weight.
-
-### Why O(n) is Possible
-We can use a randomized selection algorithm (like QuickSelect) but modify it to work with cumulative weights instead of just counting elements.
+The key insight is that this is similar to finding a regular median, but instead of counting elements, we're counting weights. The weighted median is the element that "balances" the total weight. In this case, We can use a randomized selection algorithm (like QuickSelect) but modify it to work with cumulative weights instead of just counting elements.
 
 ### Algorithm Strategy
 1. Use a divide-and-conquer approach similar to QuickSelect
@@ -88,3 +80,17 @@ def WeightedPartition(S, W, left, right, pivot_value):
 ```python
 def TotalWeight(W, n):
     return
+
+## Time Complexity Analysis
+
+### Average Case
+- **Time Complexity**: O(n)
+- **Explanation**: Similar to QuickSelect, each recursive call processes approximately half of the remaining elements
+
+### Worst Case
+- **Time Complexity**: O(n²)
+- **Explanation**: Though rare with random pivot selection, this can occur with consistently poor pivot choices
+
+### Space Complexity
+- **Complexity**: O(log n)
+- **Explanation**: Required for the recursion stack in the average case
