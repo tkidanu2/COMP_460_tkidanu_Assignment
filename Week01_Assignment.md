@@ -80,6 +80,7 @@ def WeightedPartition(S, W, left, right, pivot_value):
 ```python
 def TotalWeight(W, n):
     return
+```
 
 ## Time Complexity Analysis
 
