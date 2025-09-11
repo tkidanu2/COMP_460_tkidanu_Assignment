@@ -1,4 +1,4 @@
-# Weighted Median Algorithm Solution
+# Problem - 16 Weighted Median Algorithm Solution
 
 ## Problem Understanding
 Given a set S of n items with values S[1..n] and weights W[1..n], we need to find the weighted median in O(n) time.
