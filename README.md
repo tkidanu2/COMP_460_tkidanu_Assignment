@@ -1,1 +1,1 @@
-# COMP_460_tkidanu_Assignment
+# COMP_460_tkidanu_Assignments
