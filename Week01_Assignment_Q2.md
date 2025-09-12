@@ -83,6 +83,7 @@ def SearchInRotatedArray(A, n, x):
 ### Alternative Approach
 
 ```python
+#Uses Part (a)'s result to first find k, then performs regular binary search
 def SearchInRotatedArrayAlternative(A, n, x):
     k = FindRotationAmount(A, n)
     
