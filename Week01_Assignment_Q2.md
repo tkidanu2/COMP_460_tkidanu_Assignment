@@ -6,21 +6,18 @@ Given a sorted array of n distinct numbers that has been rotated k steps (where 
 1. Find the unknown integer k (rotation amount)
 2. Determine if the array contains a given number x
 
-**Key Properties:**
-- Original array A[1..n] was sorted in increasing order
-- After k rotations, suffix A[k+1..n] comes first, followed by prefix A[1..k]
-- Both parts maintain their sorted order
-- Example: [9,13,16,18,19,23,28,31,37,42,1,3,4,5,7,8] has k=10
+## Problem Components
 
-## Thought Process
+### Part (a): Finding k
+- This part solves the first requirement: finding the rotation amount (k) in the array
+- It uses binary search to find where the array "breaks" its sorting
+- Returns the position k where A[k] > A[k+1]
 
-### Initial Analysis
-The rotated array has a unique property: there's exactly one position where a larger element is followed by a smaller element. This is the "rotation point" where the array was split.
-
-### Key Insights
-1. **Rotation Point**: The rotation occurs at position k, so A[k] > A[k+1]
-2. **Binary Search Opportunity**: Even though the array isn't fully sorted, we can still use binary search
-3. **Two Problems**: Finding k and searching for x are related but can be solved independently
+### Part (b): Searching for x
+- This part solves the second requirement: finding if a given number x exists in the array
+- It provides two different approaches to solve this part:
+  1. Direct approach (`SearchInRotatedArray`): Modified binary search that handles rotation
+  2. Alternative approach (`SearchInRotatedArrayAlternative`): Uses Part (a)'s result to first find k, then performs regular binary search
 
 ## Part (a): Finding the Rotation Amount k
 
